@@ -3,6 +3,9 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import { manga } from './manga';
 import Scroll from '../components/Scroll';
+import Logo from '../components/Logo/Logo';
+import './App.css';
+
 
 class App  extends Component {
 	constructor() {
@@ -27,8 +30,15 @@ class App  extends Component {
 		<h1>Loading, please wait</h1> : 
 		(
 				<div className='tc'>
-					<img alt='mangom banner' src={require('../img/banner.png')} width='100%' height='600px'/>				
-					<SearchBox searchManga={this.onSearchChange}/>
+				<div className='center'>
+        			<Logo  />
+        			<h1 className='f1 pa4'>MangoM</h1>				
+
+        		</div>
+        			<p className='f5'>
+        			{'Search below for manga collection'}
+        			</p>
+        			<SearchBox searchManga={this.onSearchChange}/>
 					<Scroll>
 					<CardList manga={filteredManga} />
 					</Scroll>
